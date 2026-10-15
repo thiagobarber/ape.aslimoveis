@@ -204,7 +204,8 @@
           <div class="success" id="sucesso">
             <div class="ok">🎉</div>
             <h3 id="sucessoTitulo">Recebido!</h3>
-            <p>Te chamamos no WhatsApp em instantes.</p>
+            <p>Estamos abrindo seu WhatsApp com o cadastro pronto. Se nao abrir, toque abaixo 👇</p>
+            <a id="btnWhats" class="btn" href="#" target="_blank" rel="noopener" style="display:none;text-decoration:none;margin-top:14px">📲 Enviar pelo WhatsApp</a>
           </div>
         </div>
 
@@ -267,6 +268,18 @@
     var lead={nome:nome.value.trim(),telefone:tel.value,idade:i,renda:renda.value,empreendimento:'Vibra Vila Romana',data:new Date().toISOString()};
     try{var leads=JSON.parse(localStorage.getItem('leads_vibra_romana')||'[]');leads.push(lead);localStorage.setItem('leads_vibra_romana',JSON.stringify(leads))}catch(err){}
     console.log('Novo lead Vibra Vila Romana:',lead);
+    // Abre o WhatsApp do destino com o lead pronto (teste: 11 96980-5086)
+    var msgTexto = '🏠 NOVO LEAD — VIBRA VILA Romana\n\n'
+      + '👤 Nome: ' + lead.nome + '\n'
+      + '📱 WhatsApp: ' + lead.telefone + '\n'
+      + '🎂 Idade: ' + lead.idade + ' anos\n'
+      + '💰 Renda familiar: ' + lead.renda + '\n\n'
+      + 'Vim pela pagina do lancamento e quero minha simulacao gratis!';
+    var linkWhats = 'https://wa.me/5511969805086?text=' + encodeURIComponent(msgTexto);
+    var btnWhats = document.getElementById('btnWhats');
+    if (btnWhats) { btnWhats.href = linkWhats; btnWhats.style.display = 'flex'; }
+    window.open(linkWhats, '_blank');
+
 
     document.getElementById('sucessoTitulo').textContent='Recebido, '+lead.nome.split(' ')[0]+'! 🎉';
     form.style.display='none';
@@ -312,6 +325,5 @@
   go(0); auto();
 })();
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4add39059411aef',t:'MTc5MjA1Njg0OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>  <script defer src="https://presellfuga.lovable.app/tracker.js?site=bf7c48b3-b7fb-4952-92ca-5bd9b594c2f3"></script>
 </body>
 </html>
