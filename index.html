@@ -137,6 +137,48 @@
   gtag('js', new Date());
   gtag('config', 'AW-18505117061');
 </script>
+
+<style id="admin-css">
+#adminOverlay{position:fixed;inset:0;z-index:10000;background:#f3f4fa;overflow-y:auto;display:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#14172e}
+#adminOverlay.aberto{display:block}
+#adminOverlay .hidden{display:none!important}
+#adminOverlay header{background:linear-gradient(120deg,#080b26,#141b52 60%,#3a1c00);color:#fff;padding:18px 20px}
+#adminOverlay .head{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+#adminOverlay .brand{display:flex;align-items:center;gap:10px;color:#fff}
+#adminOverlay .brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#ff6a00,#ffb300);display:grid;place-items:center;font-weight:900;font-size:19px;color:#fff}
+#adminOverlay .brand b{font-size:18px;letter-spacing:.14em}
+#adminOverlay .brand small{display:block;font-size:8.5px;letter-spacing:.3em;color:#ffb26b;font-weight:800}
+#adminOverlay main{max-width:1100px;margin:0 auto;padding:24px 20px 46px}
+#adminOverlay .btn{border:0;cursor:pointer;border-radius:11px;padding:11px 16px;font-weight:800;font-size:13.5px;text-decoration:none;display:inline-flex;align-items:center;gap:7px;font-family:inherit}
+#adminOverlay .btn.orange{background:linear-gradient(92deg,#ff6a00,#ff8f1f);color:#fff}
+#adminOverlay .btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.3)}
+#adminOverlay .btn.light{background:#fff;color:#080b26;border:1.5px solid #e7e8f0}
+#adminOverlay .btn.red{background:#fff0f0;color:#e5484d;border:1.5px solid #f5c6c8}
+#adminOverlay .login{max-width:400px;margin:8vh auto 40px;background:#fff;border-radius:22px;padding:30px 26px;box-shadow:0 24px 55px rgba(10,14,50,.15);text-align:center}
+#adminOverlay .login .lock{width:64px;height:64px;border-radius:50%;background:#fff3e8;display:grid;place-items:center;font-size:28px;margin:0 auto 14px}
+#adminOverlay .login h2{font-size:21px;margin-bottom:6px}
+#adminOverlay .login p{color:#6f7490;font-size:13.5px;line-height:1.5;margin-bottom:17px}
+#adminOverlay .login input{width:100%;height:52px;border:1.6px solid #e7e8f0;border-radius:12px;padding:0 14px;font-size:16px;text-align:center;outline:none;background:#fbfbfe;font-family:inherit}
+#adminOverlay .login .btn{width:100%;justify-content:center;height:52px;margin-top:12px}
+#adminOverlay .erro{display:none;color:#e5484d;font-size:12.5px;font-weight:700;margin-top:10px}
+#adminOverlay .voltar{display:inline-block;margin-top:15px;color:#6f7490;font-size:12.5px;font-weight:700;background:none;border:0;cursor:pointer;font-family:inherit}
+#adminOverlay .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-bottom:17px}
+#adminOverlay .stat{background:#fff;border-radius:17px;padding:17px;box-shadow:0 8px 24px rgba(10,14,50,.06);border-top:4px solid #ff6a00}
+#adminOverlay .stat strong{display:block;font-size:30px}
+#adminOverlay .stat span{color:#6f7490;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+#adminOverlay .toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}
+#adminOverlay .toolbar input{flex:1;min-width:200px;height:47px;border:1.6px solid #e7e8f0;border-radius:12px;padding:0 14px;background:#fff;outline:none;font-size:15px;font-family:inherit}
+#adminOverlay .tablebox{background:#fff;border-radius:17px;box-shadow:0 8px 24px rgba(10,14,50,.06);overflow:auto}
+#adminOverlay table{width:100%;border-collapse:collapse;min-width:740px}
+#adminOverlay th{background:#f7f8fc;text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6f7490;padding:12px 14px;border-bottom:1px solid #e7e8f0}
+#adminOverlay td{padding:13px 14px;border-bottom:1px solid #f0f1f7;font-size:14px}
+#adminOverlay .renda{background:#fff3e8;color:#b34d00;font-weight:800;font-size:12px;padding:5px 9px;border-radius:999px;white-space:nowrap}
+#adminOverlay .wa-btn{background:#25d366;color:#fff;border-radius:9px;padding:8px 11px;font-weight:800;font-size:12.5px;text-decoration:none;white-space:nowrap}
+#adminOverlay .del{background:none;border:0;cursor:pointer;font-size:16px}
+#adminOverlay .empty{text-align:center;padding:48px 20px;color:#6f7490}
+#adminOverlay .aviso{background:#fff8e6;border:1px solid #f2d492;color:#7a5b12;border-radius:13px;padding:12px 14px;font-size:12.5px;line-height:1.55;margin-top:15px}
+@media(max-width:640px){#adminOverlay .stats{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
 
@@ -337,6 +379,48 @@
 })();
 </script>
 
+
+<div id="adminOverlay" aria-hidden="true">
+  <div id="admLogin" class="login hidden">
+    <div class="lock">🔐</div>
+    <h2>Area do Administrador</h2>
+    <p>Digite a senha para ver os leads do<br><strong>Vibra Vila Romana</strong></p>
+    <form id="admFormLogin">
+      <input type="password" id="admSenha" placeholder="Senha de acesso" autocomplete="current-password">
+      <button class="btn orange" type="submit">Entrar</button>
+      <p class="erro" id="admErro">Senha incorreta. Tente de novo.</p>
+    </form>
+    <button class="voltar" type="button" data-fechar-admin>Voltar para a pagina de vendas</button>
+  </div>
+  <div id="admPainel" class="hidden">
+    <header><div class="head">
+      <span class="brand"><span class="brand-mark">V</span><span><b>VIBRA</b><small>ADMIN - LEADS</small></span></span>
+      <span style="display:flex;gap:9px;flex-wrap:wrap">
+        <button class="btn ghost" type="button" data-fechar-admin>Pagina de vendas</button>
+        <button class="btn ghost" type="button" id="admSair">Sair</button>
+      </span>
+    </div></header>
+    <main>
+      <div class="stats">
+        <div class="stat"><strong id="admTotal">0</strong><span>Total de leads</span></div>
+        <div class="stat"><strong id="admHoje">0</strong><span>Hoje</span></div>
+        <div class="stat"><strong id="admSemana">0</strong><span>Ultimos 7 dias</span></div>
+      </div>
+      <div class="toolbar">
+        <input type="search" id="admBusca" placeholder="Buscar por nome ou telefone...">
+        <button class="btn orange" id="admCsv" type="button">Exportar CSV</button>
+        <button class="btn light" id="admAtualizar" type="button">Atualizar</button>
+        <button class="btn red" id="admLimpar" type="button">Apagar todos</button>
+      </div>
+      <div class="tablebox">
+        <table id="admTabela"><thead><tr><th>#</th><th>Nome</th><th>WhatsApp</th><th>Idade</th><th>Renda familiar</th><th>Data</th><th colspan="2">Acoes</th></tr></thead><tbody id="admCorpo"></tbody></table>
+        <div class="empty hidden" id="admVazio"><strong style="color:#14172e;font-size:16px">Nenhum lead por aqui (ainda)</strong><p style="margin-top:6px;font-size:13.5px">Quando alguem preencher o formulario neste aparelho/navegador, o cadastro aparece aqui.</p></div>
+      </div>
+      <p class="aviso">Importante: esta pagina e estatica, entao o painel mostra apenas os leads preenchidos neste mesmo navegador. O lead de verdade chega pela mensagem de WhatsApp no cadastro. Para ver leads de todos os visitantes de qualquer lugar, e preciso ligar o formulario a uma planilha/banco de dados.</p>
+    </main>
+  </div>
+</div>
+
 <!-- Botao flutuante WhatsApp (com evento de conversao) -->
 <a class="whats-float" id="whatsFloat" href="https://wa.me/5511914437134?text=Ola%21%20Vim%20pela%20pagina%20do%20lancamento%20Vibra%20Vila%20Romana%20e%20quero%20mais%20informacoes%20sobre%20o%20apartamento." target="_blank" rel="noopener" aria-label="Falar no WhatsApp sobre o Vibra Vila Romana"><span class="tip">Fale conosco 👋</span><svg width="32" height="32" viewBox="0 0 32 32" fill="#fff" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4.6 28l6.3-1.6c1.5.8 3.3 1.3 5.1 1.3 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.6c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3.7 1 1-3.6-.2-.4a9.6 9.6 0 0 1-1.5-5.2C6.7 9.6 10.9 5.4 16 5.4S25.3 9.6 25.3 14.9 21.1 24.6 16 24.6zm5.3-7.2c-.3-.1-1.7-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a7.8 7.8 0 0 1-3.9-3.4c-.3-.5.3-.5.7-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.2-.2-.5-.4z"/></svg></a>
 
@@ -362,12 +446,69 @@ document.getElementById('whatsFloat').addEventListener('click', function(){
   var seq = '';
   document.addEventListener('keydown', function(e){
     var t = e.target;
-    if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) { window.location.href = 'admin.html'; return; }
+    if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) { window.abrirAdminPainel(); return; }
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
     if (e.key && e.key.length === 1) {
       seq = (seq + e.key.toLowerCase()).slice(-5);
-      if (seq === 'admin') window.location.href = 'admin.html';
+      if (seq === 'admin') window.abrirAdminPainel();
     }
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var SENHA_ADMIN = 'vibra2026';
+  var CHAVE = 'leads_vibra_romana';
+  var overlay = document.getElementById('adminOverlay');
+  var login = document.getElementById('admLogin'), painel = document.getElementById('admPainel');
+  window.abrirAdminPainel = function(){
+    overlay.classList.add('aberto'); overlay.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden';
+    if (sessionStorage.getItem('vibra_admin') === '1') { mostrarPainel(); }
+    else { painel.classList.add('hidden'); login.classList.remove('hidden'); setTimeout(function(){ document.getElementById('admSenha').focus(); }, 80); }
+  };
+  function fechar(){ overlay.classList.remove('aberto'); overlay.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; }
+  function mostrarPainel(){ login.classList.add('hidden'); painel.classList.remove('hidden'); renderizar(); }
+  overlay.querySelectorAll('[data-fechar-admin]').forEach(function(b){ b.addEventListener('click', fechar); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && overlay.classList.contains('aberto')) fechar(); });
+  document.getElementById('admFormLogin').addEventListener('submit', function(e){
+    e.preventDefault();
+    if (document.getElementById('admSenha').value === SENHA_ADMIN) { sessionStorage.setItem('vibra_admin','1'); mostrarPainel(); }
+    else { document.getElementById('admErro').style.display = 'block'; }
+  });
+  document.getElementById('admSair').addEventListener('click', function(){ sessionStorage.removeItem('vibra_admin'); fechar(); });
+  function ler(){ try { return JSON.parse(localStorage.getItem(CHAVE) || '[]'); } catch(e){ return []; } }
+  function salvar(v){ localStorage.setItem(CHAVE, JSON.stringify(v)); }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function dig(s){ return String(s||'').replace(/\D/g,''); }
+  function renderizar(){
+    var todos = ler(); var agora = new Date(), hoje = 0, semana = 0;
+    todos.forEach(function(l){ var d = new Date(l.data); if (d.toDateString() === agora.toDateString()) hoje++; if (agora - d < 7*24*60*60*1000) semana++; });
+    document.getElementById('admTotal').textContent = todos.length;
+    document.getElementById('admHoje').textContent = hoje;
+    document.getElementById('admSemana').textContent = semana;
+    var busca = document.getElementById('admBusca').value.trim().toLowerCase();
+    var comIdx = todos.map(function(l,i){ var c = {}; for (var k in l) c[k]=l[k]; c._idx=i; return c; }).reverse();
+    var vis = comIdx.filter(function(l){ return !busca || (l.nome||'').toLowerCase().indexOf(busca) > -1 || dig(l.telefone).indexOf(dig(busca)) > -1; });
+    document.getElementById('admCorpo').innerHTML = vis.map(function(l, i){
+      var fone = dig(l.telefone); if (fone && fone.indexOf('55') !== 0) fone = '55' + fone;
+      return '<tr><td>' + (todos.length - l._idx) + '</td><td><strong>' + esc(l.nome) + '</strong></td><td style="white-space:nowrap">' + esc(l.telefone) + '</td><td>' + esc(l.idade) + ' anos</td><td><span class="renda">' + esc(l.renda) + '</span></td><td style="white-space:nowrap">' + esc(l.data ? new Date(l.data).toLocaleString('pt-BR') : '-') + '</td><td>' + (fone ? '<a class="wa-btn" target="_blank" rel="noopener" href="https://wa.me/' + fone + '">Chamar</a>' : '') + '</td><td><button class="del" type="button" data-del="' + l._idx + '">X</button></td></tr>';
+    }).join('');
+    document.getElementById('admTabela').classList.toggle('hidden', vis.length === 0);
+    document.getElementById('admVazio').classList.toggle('hidden', vis.length !== 0);
+  }
+  document.getElementById('admBusca').addEventListener('input', renderizar);
+  document.getElementById('admAtualizar').addEventListener('click', renderizar);
+  document.getElementById('admCorpo').addEventListener('click', function(e){
+    var b = e.target.closest('[data-del]'); if (!b) return;
+    if (confirm('Excluir este lead?')) { var v = ler(); v.splice(parseInt(b.getAttribute('data-del'),10),1); salvar(v); renderizar(); }
+  });
+  document.getElementById('admLimpar').addEventListener('click', function(){ if (ler().length && confirm('Apagar TODOS os leads?')) { salvar([]); renderizar(); } });
+  document.getElementById('admCsv').addEventListener('click', function(){
+    var v = ler(); if (!v.length) { alert('Ainda nao ha leads.'); return; }
+    var linhas = [['Nome','WhatsApp','Idade','Renda familiar','Data']].concat(v.map(function(l){ return [l.nome,l.telefone,l.idade,l.renda,l.data?new Date(l.data).toLocaleString('pt-BR'):'']; }));
+    var csv = '\uFEFF' + linhas.map(function(r){ return r.map(function(c){ return '"' + String(c==null?'':c).replace(/"/g,'""') + '"'; }).join(';'); }).join('\r\n');
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})); a.download = 'leads-vibra-vila-Romana.csv'; a.click(); URL.revokeObjectURL(a.href);
   });
 })();
 </script>
