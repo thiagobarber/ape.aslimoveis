@@ -152,6 +152,15 @@ label.field{display:block;font-size:13px;font-weight:600;color:var(--navy);margi
 .thanks h3{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--navy);margin-bottom:10px}
 .thanks p{color:var(--muted);font-size:15px;margin-bottom:24px}
 
+/* Botão do WhatsApp */
+.res-cta{margin-top:34px}
+.res-cta p{color:rgba(255,255,255,.7);font-size:14px;margin-top:12px}
+.wa-band{background:var(--navy);color:#fff;padding:52px 0;border-top:1px solid rgba(215,183,117,.25)}
+.wa-band .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap}
+.wa-band p{color:rgba(255,255,255,.75);margin-top:10px;max-width:540px;font-size:16px}
+.btn-wa{background:#25D366;color:#fff;border:0;padding:18px 30px;font-size:16px;font-weight:600;cursor:pointer;border-radius:2px;transition:.2s;white-space:nowrap;box-shadow:0 12px 30px rgba(37,211,102,.25)}
+.btn-wa:hover{background:#1EBE5A;transform:translateY(-1px)}
+
 /* Apartamento sugerido (imagem + planta) */
 .kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600}
 .apto-hero{margin:0;background:#fff;border:1px solid var(--line);overflow:hidden}
@@ -225,6 +234,26 @@ td small{color:var(--muted)}
 .pill.pend{color:var(--muted);border-color:var(--line);background:#F6F5F2}
 .del{background:none;border:0;color:var(--danger);cursor:pointer;font-size:13px;text-decoration:underline}
 .empty{padding:56px;text-align:center;color:var(--muted)}
+
+/* Painel: período, dias e exportação */
+.adm-panel{background:#fff;border:1px solid var(--line);padding:20px 22px;margin-bottom:16px}
+.adm-panel-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.adm-panel-head h3{font-size:15px;font-weight:600;color:var(--navy)}
+.muted{font-size:13px;color:var(--muted)}
+.chips-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{background:#fff;border:1px solid #CFC9BC;padding:9px 16px;font-size:13px;cursor:pointer;color:var(--ink);transition:.15s;font-family:inherit}
+.chip:hover{border-color:var(--navy)}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.chip-date{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-left:8px}
+.chip-date input{padding:8px 10px;border:1px solid #CFC9BC;font:inherit;font-size:13px;color:var(--ink);outline:none}
+.chip-date input:focus{border-color:var(--navy)}
+.dias-table{min-width:0}
+.dia-row{cursor:pointer}
+.dia-row:hover td{background:#FBFAF7}
+.dia-row.sel td{background:#FBF6EA}
+.dia-row td small{color:var(--muted);text-transform:capitalize;font-size:13px}
+.btn-ghost-light{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn-ghost-light:hover{background:rgba(255,255,255,.08)}
 
 /* Responsive */
 @media (max-width:860px){
@@ -329,13 +358,9 @@ td small{color:var(--muted)}
       <div class="step" data-step="4">
         <div class="step-count">Passo 4 de 5</div>
         <h2>Qual o melhor canal para falar com você?</h2>
-        <p class="hint">Escolha um canal e informe seus dados.</p>
-        <div class="seg" id="seg">
-          <button type="button" data-kind="email" class="on">E-mail</button>
-          <button type="button" data-kind="telefone">Telefone / WhatsApp</button>
-        </div>
-        <label class="field" id="contatoLabel" for="contato">E-mail</label>
-        <input class="input" id="contato" type="email" autocomplete="email" placeholder="voce@email.com">
+        <p class="hint">Informe o seu WhatsApp para o corretor entrar em contato.</p>
+        <label class="field" for="contato">Telefone com DDD (WhatsApp)</label>
+        <input class="input" id="contato" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000">
         <div class="err-msg" id="err-contato"></div>
 
         <label class="check">
@@ -387,6 +412,10 @@ td small{color:var(--muted)}
           <h3 id="recT"></h3>
           <p id="recP"></p>
         </div>
+      </div>
+      <div class="res-cta">
+        <button type="button" class="btn-wa" id="waLead">Enviar meus dados para o corretor Paiva pelo WhatsApp →</button>
+        <p>Suas respostas já vão preenchidas na mensagem. Basta tocar no botão.</p>
       </div>
     </div>
   </div>
@@ -566,7 +595,7 @@ td small{color:var(--muted)}
         <h4>Atendimento</h4>
         <ul>
           <li>Corretor Paiva · WhatsApp (11) 92037-2002</li>
-          <li>E-mail: <a href="/cdn-cgi/l/email-protection#d594a6b9bcb8baa3b0bca6fbb6babba1b4a1ba95b2b8b4bcb9fbb6bab8" style="color:inherit"><span class="__cf_email__" data-cfemail="1c5d6f707571736a79756f327f7372687d68735c7b717d7570327f7371">[email&#160;protected]</span></a></li>
+          <li>E-mail: <a href="/cdn-cgi/l/email-protection#145567787d797b62717d673a777b7a6075607b547379757d783a777b79" style="color:inherit"><span class="__cf_email__" data-cfemail="c382b0afaaaeacb5a6aab0eda0acadb7a2b7ac83a4aea2aaafeda0acae">[email&#160;protected]</span></a></li>
           <li><a href="#" style="text-decoration:none">Política de Privacidade</a></li>
         </ul>
       </div>
@@ -602,20 +631,45 @@ td small{color:var(--muted)}
   <div class="adm-top">
     <div class="brand"><b>VIBRA</b><span>Painel de leads</span></div>
     <div class="adm-actions">
-      <button class="btn btn-sm btn-white" id="admExport" type="button">Exportar CSV</button>
-      <button class="btn btn-sm btn-gold" id="admLogout" type="button">Sair</button>
+      <button class="btn btn-sm btn-white" id="admCsv" type="button">Exportar CSV</button>
+      <button class="btn btn-sm btn-gold" id="admPdf" type="button">Baixar PDF</button>
+      <button class="btn btn-sm btn-ghost-light" id="admLogout" type="button">Sair</button>
     </div>
   </div>
   <div class="adm-body">
     <div class="adm-cards">
-      <div class="adm-card"><span>Total de leads</span><strong id="stTotal">0</strong></div>
+      <div class="adm-card"><span>Total na base</span><strong id="stTotal">0</strong></div>
+      <div class="adm-card"><span>No período</span><strong id="stPeriodo">0</strong></div>
       <div class="adm-card"><span>Querem corretor</span><strong id="stCorretor">0</strong></div>
       <div class="adm-card"><span>Pedem retorno</span><strong id="stRetorno">0</strong></div>
-      <div class="adm-card"><span>Capturados hoje</span><strong id="stHoje">0</strong></div>
+    </div>
+
+    <div class="adm-panel">
+      <div class="adm-panel-head"><h3>Período</h3><span class="muted" id="periodoLabel"></span></div>
+      <div class="chips-row">
+        <button type="button" class="chip" data-period="hoje">Hoje</button>
+        <button type="button" class="chip" data-period="ontem">Ontem</button>
+        <button type="button" class="chip" data-period="7">Últimos 7 dias</button>
+        <button type="button" class="chip" data-period="30">Últimos 30 dias</button>
+        <button type="button" class="chip" data-period="todos">Todos</button>
+        <label class="chip-date">Escolher dia <input type="date" id="admDia"></label>
+      </div>
+    </div>
+
+    <div class="adm-panel">
+      <div class="adm-panel-head"><h3>Leads por dia</h3><span class="muted">Clique em um dia para ver os leads</span></div>
+      <div class="table-wrap">
+        <table class="dias-table">
+          <thead>
+            <tr><th>Dia</th><th>Leads</th><th>Querem corretor</th><th>Pedem retorno</th><th>Não escolheram</th></tr>
+          </thead>
+          <tbody id="diasRows"></tbody>
+        </table>
+      </div>
     </div>
 
     <div class="adm-tools">
-      <input class="input" id="admSearch" type="text" placeholder="Buscar por nome, e-mail ou telefone">
+      <input class="input" id="admSearch" type="text" placeholder="Buscar por nome ou telefone">
       <select class="input" id="admFilter">
         <option value="">Todas as preferências</option>
         <option value="corretor">Quer falar com corretor</option>
@@ -637,8 +691,6 @@ td small{color:var(--muted)}
     </div>
   </div>
 </section>
-
-<div id="lightbox" class="modal hidden"><img id="lbImg" alt=""></div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ================== CONFIGURAÇÃO ================== */
@@ -708,7 +760,7 @@ function updateLead(id, patch){
 }
 
 /* ================== QUIZ ================== */
-const data = { objetivo:'', nome:'', idade:'', contatoTipo:'email', contato:'', renda:'', consent:false };
+const data = { objetivo:'', nome:'', idade:'', contatoTipo:'telefone', contato:'', renda:'', consent:false };
 let step = 1;
 let leadId = null;
 
@@ -718,13 +770,10 @@ $$('[data-start]').forEach(el => el.addEventListener('click', e => {
 }));
 
 function resetQuiz(){
-  Object.assign(data, { objetivo:'', nome:'', idade:'', contatoTipo:'email', contato:'', renda:'', consent:false });
+  Object.assign(data, { objetivo:'', nome:'', idade:'', contatoTipo:'telefone', contato:'', renda:'', consent:false });
   leadId = null; step = 1;
   $('#nome').value = ''; $('#idade').value = ''; $('#contato').value = '';
   $('#consent').checked = false;
-  $$('#seg button').forEach(b => b.classList.toggle('on', b.dataset.kind === 'email'));
-  $('#contatoLabel').textContent = 'E-mail';
-  $('#contato').type = 'email'; $('#contato').placeholder = 'voce@email.com';
   $('#choiceGrid').classList.remove('hidden');
   $('#thanks').style.display = 'none';
   clearErr();
@@ -768,18 +817,6 @@ $$('.opts').forEach(group => group.addEventListener('click', e => {
   }
 }));
 
-$$('#seg button').forEach(b => b.addEventListener('click', () => {
-  data.contatoTipo = b.dataset.kind;
-  $$('#seg button').forEach(x => x.classList.toggle('on', x === b));
-  const isMail = data.contatoTipo === 'email';
-  $('#contatoLabel').textContent = isMail ? 'E-mail' : 'Telefone com DDD';
-  const inp = $('#contato');
-  inp.type = isMail ? 'email' : 'tel';
-  inp.placeholder = isMail ? 'voce@email.com' : '(11) 90000-0000';
-  inp.value = '';
-  clearErr();
-  inp.focus();
-}));
 
 $('#contato').addEventListener('input', e => {
   if (data.contatoTipo !== 'telefone') return;
@@ -817,11 +854,7 @@ function validate(s){
   }
   if (s === 4){
     const v = $('#contato').value.trim();
-    if (data.contatoTipo === 'email'){
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){ setErr('#err-contato', 'Informe um e-mail válido.'); return false; }
-    } else {
-      if (v.replace(/\D/g, '').length < 10){ setErr('#err-contato', 'Informe o telefone com DDD.'); return false; }
-    }
+    if (v.replace(/\D/g, '').length < 10){ setErr('#err-contato', 'Informe o telefone com DDD.'); return false; }
     data.contato = v;
     if (!$('#consent').checked){ setErr('#err-consent', 'Confirme a autorização de contato para continuar.'); return false; }
     data.consent = true;
@@ -908,10 +941,35 @@ function showThanks(title, text){
   $('#thanks').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
+// Mensagem pronta para o WhatsApp do corretor, com as respostas do quiz
+function mensagemWhatsApp(){
+  const r = recomendacao();
+  const canal = data.contatoTipo === 'email' ? 'E-mail' : 'Telefone';
+  return [
+    'Olá, corretor Paiva! Fiz a simulação no site do Vibra Vila Romana.',
+    '',
+    `Nome: ${data.nome}`,
+    `Idade: ${data.idade}`,
+    `${canal}: ${data.contato}`,
+    `Renda familiar: ${RENDA[data.renda] || ''}`,
+    `Objetivo: ${data.objetivo}`,
+    `Planta sugerida: ${r.m} m² (${r.t})`,
+    '',
+    'Gostaria de mais informações.'
+  ].join('\n');
+}
+function abrirWhatsApp(){
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(mensagemWhatsApp())}`, '_blank', 'noopener');
+}
+
+$('#waLead').addEventListener('click', () => {
+  updateLead(leadId, { preferencia: 'corretor' });
+  abrirWhatsApp();
+});
+
 $('#choiceBroker').addEventListener('click', () => {
   updateLead(leadId, { preferencia: 'corretor' });
-  const msg = `Olá! Vi o Vibra Vila Romana no site e gostaria de mais informações. Meu nome é ${data.nome}.`;
-  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+  abrirWhatsApp();
   showThanks(
     `Obrigado, ${firstName(data.nome)}.`,
     'O WhatsApp do corretor foi aberto em uma nova aba. Se preferir, o atendimento também pode ser feito por telefone.'
@@ -980,29 +1038,87 @@ function prefPill(p){
   if (p === 'retorno')  return '<span class="pill retorno">Pede retorno</span>';
   return '<span class="pill pend">Não escolheu</span>';
 }
+const PREF_LABEL = { corretor: 'Quer corretor', retorno: 'Pede retorno', pendente: 'Não escolheu' };
 
 function fmtData(iso){
   const d = new Date(iso);
   return d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 }
 
+/* ---------- Filtros de período (dia) ---------- */
+const adm = { periodo: 'todos', dia: '', busca: '', pref: '' };
+
+// Data local no formato AAAA-MM-DD
+function chaveDia(iso){
+  const d = new Date(iso);
+  return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+}
+function diaRelativo(offset){
+  const d = new Date();
+  d.setDate(d.getDate() + offset);
+  return chaveDia(d.toISOString());
+}
+function fmtDiaBR(k){ const [y, m, d] = k.split('-'); return `${d}/${m}/${y}`; }
+function diaSemana(k){ return new Date(k + 'T12:00:00').toLocaleDateString('pt-BR', { weekday: 'long' }); }
+function rotuloPeriodo(){
+  if (adm.periodo === 'dia') return fmtDiaBR(adm.dia);
+  return { hoje: 'Hoje', ontem: 'Ontem', '7': 'Últimos 7 dias', '30': 'Últimos 30 dias', todos: 'Todos os dias' }[adm.periodo];
+}
+function filtroBase(l){
+  const q = adm.busca.trim().toLowerCase();
+  return (!adm.pref || l.preferencia === adm.pref) &&
+         (!q || [l.nome, l.contato].join(' ').toLowerCase().includes(q));
+}
+function dentroDoPeriodo(l){
+  const k = chaveDia(l.criadoEm);
+  switch (adm.periodo){
+    case 'hoje':  return k === diaRelativo(0);
+    case 'ontem': return k === diaRelativo(-1);
+    case '7':     return k >= diaRelativo(-6) && k <= diaRelativo(0);
+    case '30':    return k >= diaRelativo(-29) && k <= diaRelativo(0);
+    case 'dia':   return k === adm.dia;
+    default:      return true;
+  }
+}
+function leadsDoFiltro(){ return getLeads().filter(l => filtroBase(l) && dentroDoPeriodo(l)); }
+
 function renderAdmin(){
   const all = getLeads();
-  const q = $('#admSearch').value.trim().toLowerCase();
-  const f = $('#admFilter').value;
-  const hoje = new Date().toLocaleDateString('pt-BR');
+  const base = all.filter(filtroBase);          // busca + preferência
+  const periodo = base.filter(dentroDoPeriodo); // + período selecionado
+
+  $$('.chip[data-period]').forEach(c => c.classList.toggle('on', c.dataset.period === adm.periodo));
+  $('#admDia').value = adm.periodo === 'dia' ? adm.dia : '';
+  $('#periodoLabel').textContent = `${rotuloPeriodo()} · ${periodo.length} lead(s)`;
 
   $('#stTotal').textContent = all.length;
-  $('#stCorretor').textContent = all.filter(l => l.preferencia === 'corretor').length;
-  $('#stRetorno').textContent = all.filter(l => l.preferencia === 'retorno').length;
-  $('#stHoje').textContent = all.filter(l => new Date(l.criadoEm).toLocaleDateString('pt-BR') === hoje).length;
+  $('#stPeriodo').textContent = periodo.length;
+  $('#stCorretor').textContent = periodo.filter(l => l.preferencia === 'corretor').length;
+  $('#stRetorno').textContent = periodo.filter(l => l.preferencia === 'retorno').length;
 
-  const rows = all.filter(l =>
-    (!f || l.preferencia === f) &&
-    (!q || [l.nome, l.contato].join(' ').toLowerCase().includes(q))
-  );
+  // Resumo por dia (mostra todos os dias da base, respeitando busca e preferência)
+  const dias = {};
+  base.forEach(l => {
+    const k = chaveDia(l.criadoEm);
+    if (!dias[k]) dias[k] = { total: 0, corretor: 0, retorno: 0, pendente: 0 };
+    dias[k].total++;
+    dias[k][l.preferencia] = (dias[k][l.preferencia] || 0) + 1;
+  });
+  const chaves = Object.keys(dias).sort().reverse();
+  $('#diasRows').innerHTML = chaves.length ? chaves.map(k => {
+    const d = dias[k];
+    const sel = adm.periodo === 'dia' && adm.dia === k ? ' sel' : '';
+    return `<tr class="dia-row${sel}" data-day="${k}">
+      <td><strong>${fmtDiaBR(k)}</strong> <small>${diaSemana(k)}</small></td>
+      <td><strong>${d.total}</strong></td>
+      <td>${d.corretor}</td>
+      <td>${d.retorno}</td>
+      <td>${d.pendente}</td>
+    </tr>`;
+  }).join('') : `<tr><td colspan="5" class="empty">Nenhum lead encontrado.</td></tr>`;
 
-  $('#admRows').innerHTML = rows.length ? rows.map(l => `
+  // Tabela de leads do período
+  $('#admRows').innerHTML = periodo.length ? periodo.map(l => `
     <tr>
       <td>${esc(fmtData(l.criadoEm))}</td>
       <td><strong>${esc(l.nome)}</strong></td>
@@ -1013,11 +1129,29 @@ function renderAdmin(){
       <td>${prefPill(l.preferencia)}</td>
       <td><button class="del" data-id="${esc(l.id)}" type="button">Excluir</button></td>
     </tr>`).join('')
-    : `<tr><td colspan="8" class="empty">Nenhum lead encontrado.</td></tr>`;
+    : `<tr><td colspan="8" class="empty">Nenhum lead neste período.</td></tr>`;
 }
 
-$('#admSearch').addEventListener('input', renderAdmin);
-$('#admFilter').addEventListener('change', renderAdmin);
+/* ---------- Eventos do painel ---------- */
+$$('.chip[data-period]').forEach(c => c.addEventListener('click', () => {
+  adm.periodo = c.dataset.period;
+  renderAdmin();
+}));
+$('#admDia').addEventListener('change', e => {
+  if (!e.target.value) return;
+  adm.periodo = 'dia';
+  adm.dia = e.target.value;
+  renderAdmin();
+});
+$('#diasRows').addEventListener('click', e => {
+  const tr = e.target.closest('tr[data-day]');
+  if (!tr) return;
+  adm.periodo = 'dia';
+  adm.dia = tr.dataset.day;
+  renderAdmin();
+});
+$('#admSearch').addEventListener('input', e => { adm.busca = e.target.value; renderAdmin(); });
+$('#admFilter').addEventListener('change', e => { adm.pref = e.target.value; renderAdmin(); });
 
 $('#admRows').addEventListener('click', e => {
   const btn = e.target.closest('.del');
@@ -1033,23 +1167,154 @@ $('#admClear').addEventListener('click', () => {
   renderAdmin();
 });
 
-$('#admExport').addEventListener('click', () => {
-  const list = getLeads();
+/* ---------- Exportação ---------- */
+function baixar(blob, nome){
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = nome;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+function nomeArquivo(ext){
+  const slug = adm.periodo === 'dia' ? adm.dia
+    : ({ hoje: 'hoje', ontem: 'ontem', '7': 'ultimos-7-dias', '30': 'ultimos-30-dias', todos: 'todos' }[adm.periodo]);
+  return `leads-vibra-${slug}-gerado-${diaRelativo(0)}.${ext}`;
+}
+
+function exportarCSV(){
+  const list = leadsDoFiltro();
   const header = ['Data', 'Nome', 'Idade', 'Tipo de contato', 'Contato', 'Renda familiar', 'Objetivo', 'Preferência'];
-  const pref = { corretor: 'Quer corretor', retorno: 'Pede retorno', pendente: 'Não escolheu' };
   const lines = [header, ...list.map(l => [
     fmtData(l.criadoEm), l.nome, l.idade,
     l.contatoTipo === 'email' ? 'E-mail' : 'Telefone',
-    l.contato, l.renda, l.objetivo, pref[l.preferencia] || l.preferencia
+    l.contato, l.renda, l.objetivo, PREF_LABEL[l.preferencia] || l.preferencia
   ])].map(row => row.map(v => `"${String(v ?? '').replace(/"/g, '""')}"`).join(';'));
-  const blob = new Blob(['\uFEFF' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'leads-vibra-vila-romana.csv';
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-});
+  baixar(new Blob(['\uFEFF' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' }), nomeArquivo('csv'));
+}
 
+// Texto para o PDF: fontes Helvetica (WinAnsi). Caracteres fora do Latin-1 viram "?".
+function pdfSanitize(s){
+  return String(s ?? '')
+    .replace(/[–—]/g, '-')
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .replace(/→/g, '->')
+    .replace(/[\r\n\t]+/g, ' ')
+    .split('').map(ch => ch.charCodeAt(0) > 255 ? '?' : ch).join('');
+}
+function pdfStr(s){
+  return '(' + pdfSanitize(s).replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)') + ')';
+}
+function pdfFit(s, maxW, size){
+  const max = Math.max(3, Math.floor(maxW / (size * 0.55)));
+  const t = pdfSanitize(s);
+  return t.length > max ? t.slice(0, max - 1) + '.' : t;
+}
+
+// Gera um PDF A4 paisagem com tabela de leads (sem bibliotecas externas)
+function gerarPDF(leads, titulo, subtitulo){
+  const W = 842, H = 595, M = 36;
+  const COR = {
+    navy: '0.055 0.106 0.173 rg',
+    ink:  '0.11 0.14 0.19 rg',
+    grey: '0.42 0.44 0.50 rg',
+    head: '0.945 0.940 0.930 rg',
+    line: '0.85 0.85 0.85 RG 0.5 w'
+  };
+  const texto = (x, yTop, s, font, size, color) =>
+    `${color} BT /${font} ${size} Tf ${x.toFixed(2)} ${(H - yTop).toFixed(2)} Td ${pdfStr(s)} Tj ET`;
+  const retangulo = (x, yTop, w, h, color) =>
+    `${color} ${x} ${(H - yTop - h).toFixed(2)} ${w} ${h} re f`;
+  const linha = (x1, y1, x2, y2) =>
+    `${COR.line} ${x1} ${(H - y1).toFixed(2)} m ${x2} ${(H - y2).toFixed(2)} l S`;
+
+  const cols = [
+    { h: 'Data',           w: 84,  s: r => r.data },
+    { h: 'Nome',           w: 110, s: r => r.nome },
+    { h: 'Idade',          w: 44,  s: r => r.idade },
+    { h: 'Contato',        w: 180, s: r => r.contato },
+    { h: 'Renda familiar', w: 150, s: r => r.renda },
+    { h: 'Objetivo',       w: 74,  s: r => r.objetivo },
+    { h: 'Preferência',    w: 0,   s: r => r.pref }
+  ];
+  cols[cols.length - 1].w = (W - 2 * M) - cols.slice(0, -1).reduce((a, c) => a + c.w, 0);
+
+  const rows = leads.map(l => ({
+    data: fmtData(l.criadoEm), nome: l.nome, idade: l.idade, contato: l.contato,
+    renda: l.renda, objetivo: l.objetivo, pref: PREF_LABEL[l.preferencia] || l.preferencia
+  }));
+
+  const ALTURA = 16, TOPO_TABELA = M + 52, LIMITE = H - 44;
+  const pages = [];
+  let ops, y;
+
+  function cabecalhoTabela(top){
+    ops.push(retangulo(M, top, W - 2 * M, 18, COR.head));
+    let x = M;
+    cols.forEach(c => { ops.push(texto(x + 6, top + 12, c.h, 'F2', 8, COR.ink)); x += c.w; });
+  }
+  function novaPagina(){
+    ops = [];
+    pages.push(ops);
+    ops.push(texto(M, M + 14, titulo, 'F2', 14, COR.navy));
+    ops.push(texto(M, M + 30, subtitulo, 'F1', 8.5, COR.grey));
+    cabecalhoTabela(TOPO_TABELA);
+    y = TOPO_TABELA + 18;
+  }
+
+  novaPagina();
+  if (!rows.length) ops.push(texto(M, y + 22, 'Nenhum lead no filtro selecionado.', 'F1', 10, COR.ink));
+  rows.forEach(r => {
+    if (y + ALTURA > LIMITE) novaPagina();
+    let x = M;
+    cols.forEach(c => { ops.push(texto(x + 6, y + 11, pdfFit(c.s(r), c.w - 12, 8), 'F1', 8, COR.ink)); x += c.w; });
+    ops.push(linha(M, y + ALTURA, W - M, y + ALTURA));
+    y += ALTURA;
+  });
+
+  // Rodapé com numeração de páginas
+  pages.forEach((p, i) => {
+    p.push(linha(M, H - 30, W - M, H - 30));
+    p.push(texto(M, H - 18, 'Documento confidencial. Contém dados pessoais protegidos pela LGPD. Uso interno.', 'F1', 7, COR.grey));
+    p.push(texto(W - M - 60, H - 18, `Página ${i + 1} de ${pages.length}`, 'F1', 7, COR.grey));
+  });
+
+  // Objetos do PDF
+  const objs = [];
+  objs[1] = '<< /Type /Catalog /Pages 2 0 R >>';
+  objs[2] = `<< /Type /Pages /Kids [${pages.map((_, i) => (5 + 2 * i) + ' 0 R').join(' ')}] /Count ${pages.length} >>`;
+  objs[3] = '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>';
+  objs[4] = '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>';
+  pages.forEach((p, i) => {
+    const pid = 5 + 2 * i, cid = pid + 1;
+    const conteudo = p.join('\n');
+    objs[pid] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${cid} 0 R >>`;
+    objs[cid] = `<< /Length ${conteudo.length} >>\nstream\n${conteudo}\nendstream`;
+  });
+
+  let out = '%PDF-1.4\n%\u00e2\u00e3\u00cf\u00d3\n';
+  const off = [];
+  for (let id = 1; id < objs.length; id++){
+    off[id] = out.length;
+    out += `${id} 0 obj\n${objs[id]}\nendobj\n`;
+  }
+  const xref = out.length;
+  out += `xref\n0 ${objs.length}\n0000000000 65535 f \n`;
+  for (let id = 1; id < objs.length; id++) out += String(off[id]).padStart(10, '0') + ' 00000 n \n';
+  out += `trailer\n<< /Size ${objs.length} /Root 1 0 R >>\nstartxref\n${xref}\n%%EOF`;
+  return new Blob([Uint8Array.from(out, c => c.charCodeAt(0))], { type: 'application/pdf' });
+}
+
+function exportarPDF(){
+  const list = leadsDoFiltro();
+  const subtitulo = `Período: ${rotuloPeriodo()}   |   Leads: ${list.length}   |   Gerado em ${new Date().toLocaleString('pt-BR')}`;
+  baixar(gerarPDF(list, 'Vibra Vila Romana · Leads capturados', subtitulo), nomeArquivo('pdf'));
+}
+
+$('#admCsv').addEventListener('click', exportarCSV);
+$('#admPdf').addEventListener('click', exportarPDF);
 $('#admLogout').addEventListener('click', () => showScreen('home'));
 
 /* ================== GALERIA ================== */
@@ -1103,5 +1368,5 @@ $('#planC').innerHTML = planSVG('dorm2', false);
 
 showScreen('home');
 </script>
-<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5448986897ac0a7',t:'MTc5MzYzNzE2Nw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5448986897ac0a7',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a544b7eb394500f7',t:'MTc5MzYzOTA2Nw=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a544b7eb394500f7',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
